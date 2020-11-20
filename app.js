@@ -15,7 +15,7 @@ today = dd + "/" + mm + "/" + yyyy;
 
 search.addEventListener("submit", (event) => {
     event.preventDefault();
-    details.innerHTML = `<img height="150" width="150" src="../weather_icons/refresh.gif">`;
+    details.innerHTML = `<img height="150" width="150" src="weather_icons/refresh.gif">`;
     const location = event.target.location.value;
     weatherApp(location);
 });
@@ -23,7 +23,7 @@ search.addEventListener("submit", (event) => {
 searchTheme.addEventListener("submit", (event) => {
     event.preventDefault();
     mainTheme.classList.add('hide')
-    details.innerHTML = `<img height="150" width="150" src="../weather_icons/refresh.gif">`;
+    details.innerHTML = `<img height="150" width="150" src="weather_icons/refresh.gif">`;
     const location = event.target.location.value;
     weatherApp(location);
 });
@@ -42,7 +42,10 @@ async function fetchAPI(location) {
 }
 
 function generateHTML(data) {
-    const html = `
+    if (data.cod != '404') {
+        prevButton.classList.add('show')
+        nextButton.classList.add('show')
+        const html = `
     <div class="first-sight-info">
                     <div class="location-data">${data.name}</div>
                     <div class="date-data">${today}</div>
@@ -56,10 +59,8 @@ function generateHTML(data) {
                     <p>Швидкість вітру - ${data.wind.speed} м/с</p>                                       
                 </div>
     `;
-    details.innerHTML = html;
+        details.innerHTML = html;
+    }
+    else alert('Дане місцеположення не знайдене, перевірте його написання')
 }
 
-if (generateHTML) {
-    prevButton.classList.add('show')
-    nextButton.classList.add('show')
-}

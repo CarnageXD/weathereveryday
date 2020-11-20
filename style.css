@@ -45,7 +45,7 @@ a {
 .main-theme.hide {    
     visibility: hidden;  
     opacity: 0;
-    transition: 1.5s  
+    transition: 1s  
 }
 
 .theme-logo {
@@ -220,7 +220,7 @@ form button {
     opacity: 0;
     transform: translate(0px, -100%);
 }
-.popup-close {
+.popup-close {    
     position: absolute;
     right: 8px;
     top: 8px;
