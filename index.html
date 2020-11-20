@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <link rel="stylesheet" href="style.css">
+    <title>WeatherEveryday!</title>
+</head>
+
+<body>
+    <div oncopy="return false" class="main-theme">
+        <div class="theme-logo">
+            <div class="logo-text">WeatherEveryday!</div>
+            <div class="logo-img">
+                <a><img height="150" width="150" src="../weather_icons/giphy.gif"></a>
+            </div>
+        </div>
+        <div class="theme-navigation">
+            <a href="">
+                <div class="your-geolocation">Пошук за вашою геолокацією</div>
+            </a>
+            <a href="">
+                <div class="search-by-button">Пошук за запитом</div>
+            </a>
+            <div class="search-menu-theme">
+                <form class="form-theme">
+                    <input required type="text" placeholder="Введіть локацію..." name="location">
+                    <button type="submit">
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <header>
+        <div class="logo">
+            <div class="logo-text"><a href="">WeatherEveryday!</a></div>
+            <div class="logo-img">
+                <a href=""><img height="76" width="76" src="../weather_icons/giphy.gif"></a>
+            </div>
+        </div>
+        <div class="about">
+            <div class="about-us" id="open-pop"><a href="">Про автора</a></div>
+            <div class="about-api"><a target="_blank" href="https://openweathermap.org/api">Про API</a></div>
+        </div>
+        <div class="search-menu">
+            <form class="form-menu">
+                <input required type="text" placeholder="Введіть локацію..." name="location">
+                <button type="submit">
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </form>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="button-left"><i class="fas fa-arrow-left"></i></div>
+            <div class="details">
+                <p>Для того, щоб дізнатися погоду зараз, введіть назву населеного пункту</p>
+                <!-- <div class="first-sight-info">
+                    <div class="location-data">location</div>
+                    <div class="date-data">date</div>
+                    <div class="temperature">15<span>°с</span></div>                    
+                    <div class="description">description</div>
+                    <div class="img-description"></div>
+                </div>
+                <div class="secondary-info">
+                    <p>info1</p>
+                    <p>info2</p>
+                    <p>info3</p>
+                    <p>info4</p>
+                </div> -->
+            </div>
+            <div class="button-right"><i class="fas fa-arrow-right"></i></div>
+        </div>
+    </main>
+
+    <div id="popup" class="popup">
+        <div class="popup-body">
+            <div class="popup-content">
+                <a id="popup-close" class="popup-close"><i class="far fa-times-circle"></i></a>
+                <div class="popup-title">Інформація про автора курсового проекту</div>
+                <div class="popup-text">
+                    <pre>Курсовий проект
+з дисципліни "Програмування"
+на тему "Веб-додаток для прогнозування погоди"
+був розроблений студентом IV курсу 41КІ групи
+спеціальності 123 "Комп'ютерна інженерія"
+Глуханичем Б.О.<pre></div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer></footer>        
+    <script src="https://kit.fontawesome.com/ec4fabdb94.js" crossorigin="anonymous"></script>  
+    <script src='theme.js'></script> 
+    <script src="app.js"></script>     
+    <script src="popup.js"></script>    
+</body>
+
+</html>
