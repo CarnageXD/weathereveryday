@@ -14,9 +14,7 @@ let yyyy = today.getFullYear();
 today = dd + "/" + mm + "/" + yyyy;
 
 
-alert(`Для тестировщиков
-В планах: эффекты мб (в зависимости от погоды), смена оформления (или тоже от погоды или от дня) звук (от погоды и время дня), переоформление подачи самой погоды 100%, ща так себе..И адаптивность под разные разрешения.
-Мб чет еще?`)
+
 search.addEventListener("submit", (event) => {
     event.preventDefault();
     details.innerHTML = `<img height="150" width="150" src="weather_icons/refresh.gif">`;
