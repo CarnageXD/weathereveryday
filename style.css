@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -9,16 +10,20 @@ html {
     font-family: 'Montserrat', sans-serif;
 }
 
-body {
-    max-width: 1400px;
-    margin: 0 auto;
-    min-width: 450px;
+body {    
     color: white;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background: linear-gradient(#1D2B64, #F8CDDA);
+    /* background: linear-gradient(#1D2B64, #F8CDDA); */
+    background: linear-gradient(#e2aabb,#5a5ff5);
+}
+
+main {
+    width: 100%;
+    max-width: 1366px;
+    margin: 0 auto;
 }
 
 a {
@@ -30,7 +35,7 @@ a {
     height: 100%;
     width: 100%;
     position: fixed;
-    background-color:#29346a;
+    background-color:#2d1288;
     top: 0;
     left: 0;
     z-index: 100;    
@@ -39,7 +44,8 @@ a {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    font-size: 6rem;    
+    font-size: 6rem;
+    
 }
 
 .main-theme.hide {    
@@ -68,7 +74,7 @@ a {
 
 .your-geolocation, .search-by-button {   
    border: 3px solid white;
-   background-color: #29346a;
+   background-color: #2d1288;
    color: #fff;
    width: 310px; 
    height: 85px;
@@ -109,7 +115,8 @@ a {
 header {
     text-shadow: 1px 1px black;
     font-weight: 750;
-    margin-top: 1rem;
+    padding: .3rem 12rem;
+    background-color: #2d1288;
     display: flex;
     justify-content: space-between;
 }
@@ -173,7 +180,7 @@ form button {
 }
 
 .about-us:hover, .about-api:hover {
-    border-bottom: 2px solid white;
+    border-bottom: 4px solid white;
 }
 
 .popup {
@@ -243,17 +250,132 @@ form button {
 ***************************N**************************
 *****************************************************/
 
-main {
-    align-self: center;
-}
-
 .container {
-    text-shadow: 1px 1px black;
-    max-width: 600px;    
-    display: flex;
-    justify-content: space-between;    
+    height: 340px;
+    background: linear-gradient(#311288,#2e2e8d);    
+    text-shadow: 1px 1px black;      
+    display: flex;   
+    border-bottom: 2rem solid #1F1C65;   
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
 }
 
+.additional-container {
+    padding-top: 3rem;
+    font-size: 1.5em;
+    color: rgb(0, 0, 0);
+    height: 340px;
+    background: white;           
+    display: flex;   
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+.weather {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.week-day-temperature {
+    font-size: 2rem;
+}
+.week-day-description {
+    letter-spacing: 1px;
+    font-size: 1rem;
+}
+
+.details { 
+    width: 100%; 
+    padding: 2rem 8rem;      
+    font-size: 1.5rem;       
+    text-align: center;
+    text-shadow: 1px 1px black;
+}
+
+.first-sight-info {
+    display: flex;
+    justify-content: space-between;   
+}
+
+.degree {
+    display: flex;
+    flex-direction: column;
+}
+
+.additional-degree {
+    padding-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    display: flex;   
+    justify-content: space-between;
+    text-transform: uppercase;
+    font-weight: 200;  
+}
+
+.separator {
+    margin: 0 3rem;
+}
+
+.temperature {
+    font-size: 6rem;
+    font-weight: 900;
+    margin-top: 2rem;
+    text-shadow: 1px 3px black;
+}
+
+.feels-like {
+    margin-bottom: 2rem;
+}
+
+span {
+    font-weight: normal;
+}
+
+.location-data {
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    font-weight: 650;
+    margin-bottom: 0.5rem;
+    border-bottom: 2px solid white;
+}
+
+.date-data {
+    margin: 0 auto;
+    font-size: 1rem;
+}
+
+.description {
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;    
+}
+
+.week-day {
+    font-size: 1rem;
+}
+
+.daycontainer{
+    padding: 0.5rem;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    height: 230px;
+    transition: 0.2s;
+}
+
+.daycontainer:hover {   
+    transition: 0.2s; 
+    cursor: pointer;
+    box-shadow: 0px 0px 8px 1px rgb(0, 0, 0);  
+    border-radius: 5px;  
+}
+
+
+/* 
 .button-left, .button-right {
     margin: 0, 2rem;
     height: 175px;
@@ -280,46 +402,4 @@ main {
 
 .button-right { 
   margin-left: 3rem;  
-} 
-
-.details {
-    font-size: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    text-shadow: 1px 1px black;
-}
-
-.temperature {
-    font-size: 6rem;
-    font-weight: 900;
-    margin-top: 2rem;
-    text-shadow: 2px 5px black;
-}
-
-.feels-like {
-    margin-bottom: 2rem;
-}
-
-span {
-    font-weight: normal;
-}
-
-.location-data {
-    font-size: 2rem;
-    font-weight: 650;
-    margin-bottom: 0.5rem;
-}
-
-.date-data {
-    margin: 0 auto;
-    font-size: 1rem;
-}
-
-.description {
-    font-size: 2rem;
-    font-weight: 700;
-    font-style: italic;
-    margin-bottom: 1rem;    
-}
+}  */
