@@ -6,7 +6,7 @@ const mainLoad = document.querySelector("main");
 const prevButton = document.querySelector(".button-left")
 const nextButton = document.querySelector(".button-right")
 const mainTheme = document.querySelector('.main-theme')
-
+let locations;
 let today = new Date();
 let dd = String(today.getDate()).padStart(2, "0");
 let mm = String(today.getMonth() + 1).padStart(2, "0");
@@ -14,31 +14,40 @@ let yyyy = today.getFullYear();
 today = dd + "/" + mm + "/" + yyyy;
 
 
-// alert(`Для тестировщиков
-// В планах: эффекты мб (в зависимости от погоды), смена оформления (или тоже от погоды или от дня) звук (от погоды и время дня), переоформление подачи самой погоды 100%, ща так себе..И адаптивность под разные разрешения.
-// Мб чет еще?`)
 search.addEventListener("submit", (event) => {
     event.preventDefault();
-    // details.innerHTML = `<img height="150" width="150" src="weather_icons/refresh.gif">`;
-    const location = event.target.location.value;
-    weatherApp(location);
+    mainTheme.classList.add('hide')
+    mainLoad.innerHTML = `<div class="refresh" style = "display: flex; justify-content:center"><img src="weather_icons/refresh.gif"></div>`
+    locations = event.target.location.value;
+    weatherApp(locations);
 });
 
 searchTheme.addEventListener("submit", (event) => {
     event.preventDefault();
     mainTheme.classList.add('hide')
-    // details.innerHTML = `<img height="150" width="150" src="weather_icons/refresh.gif">`;
-    const location = event.target.location.value;
-    weatherApp(location);
+    searchMenu.classList.remove('show')
+    mainLoad.innerHTML = `<div class="refresh" style = "display: flex; justify-content:center"><img src="weather_icons/refresh.gif"></div>`
+    locations = event.target.location.value;
+    weatherApp(locations);
 });
 
-async function weatherApp(location) {
-    const data = await fetchAPI(location);
-    generateHTML(data);
+
+async function weatherApp(locations) {
+    const data = await fetchAPI(locations);
+    const currentData = await currentFetchAPI(locations)
+    generateHTML(data, currentData);
 }
 
-async function fetchAPI(location) {
-    const baseURL = `https://api.weatherbit.io/v2.0/forecast/daily?city=${location}&key=${key}&days=${7}&lang=uk`
+async function currentFetchAPI(locations) {
+    const baseURL = `https://api.weatherbit.io/v2.0/current?city=${locations}&key=${key}&lang=uk`
+    const response = await fetch(baseURL);
+    const currentData = await response.json();
+    console.log(currentData);
+    return currentData;
+}
+
+async function fetchAPI(locations) {
+    const baseURL = `https://api.weatherbit.io/v2.0/forecast/daily?city=${locations}&key=${key}&days=${7}&lang=uk`
     const response = await fetch(baseURL);
     const data = await response.json();
     console.log(data);
@@ -46,26 +55,26 @@ async function fetchAPI(location) {
 }
 
 
-function generateHTML(data) {
-    if (data.cod != '404') {
-        const html = `
-        <div class="container">
+function generateHTML(data, currentData) {
+    const html = `     
+        <div class="container">                
+        <div class="weather-effect"><img src="weather_icons/snowfall.gif" height="308px" width="1366px"></div>
             <div class="details">
                 <div class="first-sight-info">
                     <div class="degree-description">
                         <div class="degree">
-                            <div class="temperature">0<span>°с</span></div>
-                            <div class="description">хмарно</div>
+                            <div class="temperature">${currentData.data[0].temp}<span>°с</span></div>
+                            <div class="description">${currentData.data[0].weather.description}</div>
                         </div>
                         <div class="additional-degree">
                             <div class="humidity">
                                 <div class="additional-degree-name">Вологіcть</div>
-                                <div class="additional-degree-index">90%</div>
+                                <div class="additional-degree-index">${Number(currentData.data[0].rh).toFixed(1)}%</div>
                             </div>
                             <div class="separator"> | </div>
                             <div class="wind">
                                 <div class="additional-degree-name">Вітер</div>
-                                <div class="additional-degree-index">1 м/с</div>
+                                <div class="additional-degree-index">${Number(currentData.data[0].wind_spd).toFixed(1)}м/с</div>
                             </div>
 
                         </div>
@@ -73,7 +82,7 @@ function generateHTML(data) {
                     </div>
                     <div class="geolocation">
                         <div class="location-data">${data.city_name}</div>
-                        <div class="date-data">${data.data[0].valid_date}</div>
+                        <div class="date-data">${data.data[0].valid_date.split('-').reverse().join('-')}</div>
                     </div>
                 </div>
             </div>
@@ -140,35 +149,18 @@ function generateHTML(data) {
             </section>
         </div>
 `;
-        mainLoad.innerHTML = html;
-    }
-    else alert('Дане місцеположення не знайдене, перевірте його написання')
+    mainLoad.innerHTML = html;
 }
 
 function cutDate(data) {
     return data.split('-').splice(1, 2).reverse().join('.')
 }
 
-// function generateHTML(data) {
-//     if (data.cod != '404') {
-//         // prevButton.classList.add('show')
-//         // nextButton.classList.add('show')
-//         const html = `
-//         <div class="first-sight-info">
-//                         <div class="location-data">${data.city_name}</div>
-//                         <div class="date-data">${today}</div>
-//                         <div class="temperature">${data.data[0].temp}<span>°с</span></div >
-//                         <div class="description">${data.data[0].weather.description}</div>
-//                         <div class="feels-like">Почувається як ${data.data[0].app_temp}</span></div                                       
-//                         <div class="img-description"></div>
-//                     </div >
-//     <div class="secondary-info">
-//         <p>Вологість - ${data.data[0].rh}% </p>
-//         <p>Хмарність: ${data.data[0].clouds}%</p>
-//     </div>
-// `;
-//         details.innerHTML = html;
-//     }
-//     else alert('Дане місцеположення не знайдене, перевірте його написання')
-// }
+const goBackMenu = document.querySelector('.back-menu')
 
+goBackMenu.addEventListener("click", (e) => {
+    e.preventDefault()
+    mainTheme.classList.remove("hide")
+    btnTheme.classList.remove('hide')
+    geoButton.classList.remove('hide')
+})

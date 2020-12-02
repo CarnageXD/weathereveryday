@@ -24,6 +24,7 @@ main {
     width: 100%;
     max-width: 1366px;
     margin: 0 auto;
+    position: relative;
 }
 
 a {
@@ -44,8 +45,10 @@ a {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    font-size: 6rem;
-    
+    font-size: 6rem;  
+    visibility: visible;  
+    opacity: 1;
+    transition: 1s;
 }
 
 .main-theme.hide {    
@@ -80,11 +83,13 @@ a {
    height: 85px;
    text-align: center;
    transition: 1s;
+   visibility: visible;
+   cursor: pointer;
 }
 
 .your-geolocation.hide, .search-by-button.hide { 
     transition: 0.1s;
-    visibility: 0;
+    visibility: hidden;
     opacity: 0;
 }
 
@@ -99,8 +104,7 @@ a {
     position: fixed;
     margin-top: 1.1rem;
     visibility: hidden;
-    opacity: 0;
-    transform: translate(100%, 0px);
+    opacity: 0;    
     transition: 1s;    
 }
 
@@ -108,9 +112,9 @@ a {
     max-width: 915px;  
     visibility: visible;
     opacity: 1;
-    transition: 1s;
-    transform: translate(-2%, 0px);
+    transition: 1s;    
 }
+
 
 header {
     text-shadow: 1px 1px black;
@@ -258,6 +262,7 @@ form button {
     border-bottom: 2rem solid #1F1C65;   
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
+    position: relative;
 }
 
 .additional-container {
@@ -375,31 +380,30 @@ span {
 }
 
 
-/* 
-.button-left, .button-right {
-    margin: 0, 2rem;
-    height: 175px;
-    width: 75px;
-    background-color: rgb(195, 195, 195);
-    opacity: 15%;
+.weather-effect {
     display: flex;
-    align-items: center;
-    align-self: center;
-    justify-content: center; 
-    cursor: pointer;  
-    visibility: hidden; 
-}
-.button-left.show, .button-right.show {
-    visibility: visible;
+    justify-content: center;
+    opacity: 10%;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
 }
 
-.button-left:hover, .button-right:hover {
-    opacity: 65%;    
-}
-.button-left { 
-    margin-right: 3rem;
+.back-menu {
+    position: fixed;      
+    background-color: transparent;
+    border: 0;
+    color: white;
+    opacity: 40%;
+    left: 2rem;
+    top: 12rem;
+    font-size: 4rem;  
+    height: 4rem;
+    width: 4rem;  
+    cursor: pointer;    
 }
 
-.button-right { 
-  margin-left: 3rem;  
-}  */
+.back-menu:hover {
+    opacity: 100%;    
+}
