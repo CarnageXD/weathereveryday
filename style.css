@@ -108,6 +108,18 @@ a {
     transition: 1s;    
 }
 
+.form-theme {
+    position: relative;
+}
+
+.close-search {
+    position: absolute;
+    top: 0.5rem;
+    left: -2.5rem;
+    height: 2rem;
+    width: 2rem;     
+}
+
 .search-menu-theme.show {  
     max-width: 915px;  
     visibility: visible;
@@ -293,7 +305,7 @@ form button {
 
 .details { 
     width: 100%; 
-    padding: 2rem 8rem;      
+    padding: 1rem 8rem;      
     font-size: 1.5rem;       
     text-align: center;
     text-shadow: 1px 1px black;
@@ -304,7 +316,11 @@ form button {
     justify-content: space-between;   
 }
 
-.degree {
+.geolocation {
+    padding-top: 3.5rem;
+}
+
+.degree {    
     display: flex;
     flex-direction: column;
 }
@@ -324,14 +340,15 @@ form button {
 }
 
 .temperature {
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
     font-size: 6rem;
-    font-weight: 900;
-    margin-top: 2rem;
+    font-weight: 900;    
     text-shadow: 1px 3px black;
 }
 
-.feels-like {
-    margin-bottom: 2rem;
+.last-updated {
+    font-weight: 300;
 }
 
 span {
@@ -379,11 +396,46 @@ span {
     border-radius: 5px;  
 }
 
+.additional-details, .degree-description {
+    padding-top: 1.5rem;
+}
+
+.additional-details {
+    opacity: 0.6;
+    text-align: left;
+    display: flex;    
+    justify-content: space-between;
+}
+
+.additional-details:hover {
+    opacity: 1;
+}
+
+.additional-name {
+    margin-bottom: 0.3rem;
+    font-weight: 300;
+    font-size: 1.2rem;
+}
+
+.additional-index {
+    margin-bottom: 1rem;
+}
+
+.first-additional {
+    margin-left: 3rem;
+    margin-right: 5rem;
+}
+
+.first-additional, .second-additional {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
 .weather-effect {
     display: flex;
     justify-content: center;
-    opacity: 10%;
+    opacity: 5%;
     position: absolute;
     width: 100%;
     top: 0;
