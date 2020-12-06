@@ -224,7 +224,7 @@ geolocationButton.addEventListener('click', (event) => {
                         </div>
                         <div class="geolocation">
                             <div class="location-data">${data.city_name}</div>
-                            <div class="date-data">${data.data[0].valid_date.split('-').reverse().join('-')}</div>
+                            <div class="date-data">${data.data[current].valid_date.split('-').reverse().join('-')}</div>
                             <div class="img-description">
                                  <img src="weather_icons/${data.data[counter].weather.icon}.png">
                             </div>
