@@ -56,8 +56,12 @@ async function fetchAPI(locations) {
         return data;
     }
     catch (e) {
-        if (e instanceof SyntaxError)
+        if (e instanceof SyntaxError) {
             alert("Помилка запиту, спробуйте ввести місцеположення по-іншому")
+            mainTheme.classList.remove("hide")
+            btnTheme.classList.remove('hide')
+            geoButton.classList.remove('hide')
+        }
     }
 }
 
