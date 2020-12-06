@@ -15,20 +15,22 @@ let counter = 0;
 
 
 search.addEventListener("submit", (event) => {
-    event.preventDefault();
+    event.preventDefault()
     mainTheme.classList.add('hide')
+    counter = 0
     mainLoad.innerHTML = `<div class="refresh" style = "display: flex; justify-content:center; opacity:0.5;"><img src="weather_icons/refresh.gif"></div>`
-    locations = event.target.location.value;
-    weatherApp(locations);
+    locations = event.target.location.value
+    weatherApp(locations)
 });
 
 searchTheme.addEventListener("submit", (event) => {
-    event.preventDefault();
+    event.preventDefault()
     mainTheme.classList.add('hide')
+    counter = 0
     searchMenu.classList.remove('show')
     mainLoad.innerHTML = `<div class="refresh" style = "display: flex; justify-content:center; opacity: 0.5;"><img src="weather_icons/refresh.gif"></div>`
-    locations = event.target.location.value;
-    weatherApp(locations);
+    locations = event.target.location.value
+    weatherApp(locations)
 });
 
 
