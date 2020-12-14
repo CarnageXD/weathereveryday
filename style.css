@@ -11,7 +11,8 @@ html {
     
 }
 
-body {    
+body { 
+    min-width: 1170px;   
     color: white;
     height: 100vh;
     display: flex;
@@ -21,10 +22,10 @@ body {
     background: linear-gradient(#e2aabb,#5a5ff5);
 }
 
-main {
-    width: 100%;
-    max-width: 1280px;
+main {        
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 0 15px;
     position: relative;
 }
 
@@ -129,42 +130,46 @@ a {
 }
 
 
-header {
-    white-space: nowrap;
+header {    
+    background-color: #2d1288;   
     text-shadow: 1px 1px black;
     font-weight: 750;    
-    padding: .3rem 12rem;
-    background-color: #2d1288;
+    width: 100%;    
+    white-space: nowrap;
+}
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-around;
 }
-
 .header-burger {
+    position: absolute;
     visibility: hidden;
 }
 
-header>.logo {
+.header-container>.logo {
     display: flex;
     align-items: center;
-    margin-right: 1rem;
+    margin-right: 2rem;
 }
 
 .logo>.logo-text {
     max-width: 100%;
     margin-right: 0.5rem;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
 }
 
 .search-menu {
-    min-width: 300px;
-    width: 50%;
+    min-width: 185px;
+    width: 100%;
     position: relative;
     margin-top: 1.1rem;
 }
 
 input[type=text] {
     border: 1px solid white;
-    width: 95%;
+    width: 100%;
     outline: 0;
     border-radius: 15px;
     height: 3rem;
@@ -181,7 +186,7 @@ form button {
     cursor: pointer;
     position: absolute;
     top: 1rem;
-    right: 8%;
+    right: 5%;
     border: 0;
     background: 0;
     outline: 0;
@@ -194,7 +199,7 @@ form button {
 }
 
 .about-us {
-    margin-right: 3rem;
+    margin-right: 2rem;
 }
 
 .about-api {
@@ -302,7 +307,7 @@ form button {
 
 .weather {
     text-align: center;
-    width: 100%;
+    max-width: 100%;
     display: flex;
     justify-content: space-around;
 }
@@ -392,6 +397,11 @@ span {
     font-size: 1rem;
 }
 
+.additional-container {
+    justify-content: center;
+    
+}
+
 .daycontainer{
     padding: 0.5rem;
     justify-content: center;
@@ -473,44 +483,63 @@ span {
     opacity: 100%;    
 }
 
-@media only screen and (max-width: 1492px){     
-    main {
-        max-width: 1080px;
-    }  
-    .details {
-        padding: 1rem 3rem;
-    }
-}
 
-@media only screen and (max-width: 1366px){  
-     main {
-         max-width: 1010px;
-     }
+/*Large devices, Wide screens*/
+@media only screen and (max-width: 1162px){
+    .back-menu {
+        top: 9rem;
+    }
+    .header-container {
+        max-width: 990px;
+    }
+    main {
+        margin-top: 2rem;
+        max-width: 990px;
+    }
     .additional-details, .details {
         white-space: nowrap;
         word-wrap: none;
+    } 
+    .details {
+        padding: 1rem 3rem;
     }    
 }
 
-
-@media only screen and (max-width: 1013px){   
+/*Medium devices, Desktops*/
+@media only screen and (max-width: 992px){
+	.header-container {
+        z-index: 1000;
+        position: fixed;
+        top: 0;
+        left: 0;
+        max-width: 750px;
+    }
+    main {
+        padding-top: 5rem;
+        max-width: 750px;
+    }
     body {
         background: linear-gradient(#e2aabb,#5a5ff5) no-repeat;
         background-attachment: fixed;
     }
-    .header-burger {
-        display: block;
-        position: relative;
+
+    .header-container {
+        position: relative; 
+    }
+
+    .header-burger {        
+        position: absolute;
         font-size: 36px;
         visibility: visible;
-        left: 57rem;        
+        left: 67rem;        
         top: 1rem
-    }    
+    }  
+    
     main {
         margin-top: 2rem;
     }
     .container {
-        height: 70%;
+        height: 50%;
         width: 75%;
         margin: 0 auto;
     }
@@ -536,7 +565,7 @@ span {
         margin-bottom: 3rem;
     }
     .additional-container {
-        height: 45%;
+        height: 55%;
         width: 75%;
         margin: 0 auto;        
     }
@@ -544,39 +573,18 @@ span {
         width: 75%;
         margin: 0 auto; 
         flex-wrap: wrap;              
-    }  
-    .daycontainer {
-
     } 
-    /* .additional-container {
-        height: 75%;
-        width: 75%;
-        margin: 0 auto;        
-    }
-    .weather {
-        width: 75%;
-        margin: 0 auto;  
-        display: flex;
-        flex-direction: column;      
-    }  
-    .daycontainer {
-        display: flex;
-        flex-direction: row;
-        height: 100px;
-        align-items: center;
-        justify-content: space-between;
-    }    */
-}
-
-
-/*Medium devices, Desktops*/
-@media only screen and (max-width: 992px){
-	
 }
 
 /*Small devices, Tablets*/
-@media only screen and (max-width: 768px){
-	
+@media only screen and (max-width: 767px){
+    .header-container {
+        max-width: none;
+    }   
+    
+	main {
+        max-width: none;
+    } 
 }
 
 /*Extra small devices, Phones*/
