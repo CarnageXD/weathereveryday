@@ -12,7 +12,6 @@ html {
 }
 
 body { 
-    min-width: 1170px;   
     color: white;
     height: 100vh;
     display: flex;
@@ -134,7 +133,7 @@ header {
     background-color: #2d1288;   
     text-shadow: 1px 1px black;
     font-weight: 750;    
-    width: 100%;    
+    max-width: 100%;    
     white-space: nowrap;
 }
 .header-container {
@@ -161,15 +160,15 @@ header {
 }
 
 .search-menu {
-    min-width: 185px;
-    width: 100%;
+    /* min-width: 185px;
+    width: 100%; */
     position: relative;
     margin-top: 1.1rem;
 }
 
 input[type=text] {
     border: 1px solid white;
-    width: 100%;
+    /* width: 100%; */
     outline: 0;
     border-radius: 15px;
     height: 3rem;
@@ -307,7 +306,7 @@ form button {
 
 .weather {
     text-align: center;
-    max-width: 100%;
+    /* max-width: 100%; */
     display: flex;
     justify-content: space-around;
 }
@@ -321,7 +320,7 @@ form button {
 }
 
 .details { 
-    width: 100%; 
+    /* width: 100%;  */
     padding: 1rem 8rem;      
     font-size: 1.5rem;       
     text-align: center;
@@ -485,36 +484,38 @@ span {
 
 
 /*Large devices, Wide screens*/
-@media only screen and (max-width: 1162px){
-    .back-menu {
-        top: 9rem;
-    }
+@media only screen and (max-width: 1200px){    
     .header-container {
-        max-width: 990px;
+        max-width: 970px;
     }
     main {
         margin-top: 2rem;
-        max-width: 990px;
-    }
-    .additional-details, .details {
+        max-width: 970px;
+    } 
+    /* .additional-details, .details {
         white-space: nowrap;
         word-wrap: none;
-    } 
+    } */
     .details {
         padding: 1rem 3rem;
-    }    
+    }          
+    .back-menu {
+        top: 9rem;
+    }
 }
 
 /*Medium devices, Desktops*/
 @media only screen and (max-width: 992px){
 	.header-container {
-        z-index: 1000;
+        /* z-index: 1000;
         position: fixed;
         top: 0;
-        left: 0;
+        left: 0; */
         max-width: 750px;
+        min-width: 350px;
     }
     main {
+        min-width: 350px;
         padding-top: 5rem;
         max-width: 750px;
     }
