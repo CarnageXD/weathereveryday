@@ -5,14 +5,7 @@ const searchTheme = document.querySelector(".form-theme")
 const mainLoad = document.querySelector("main");
 const mainTheme = document.querySelector('.main-theme')
 let locations;
-let today = new Date();
-let dd = String(today.getDate()).padStart(2, "0");
-let mm = String(today.getMonth() + 1).padStart(2, "0");
-let yyyy = today.getFullYear();
-today = dd + "/" + mm + "/" + yyyy;
 let counter = 0;
-
-
 
 search.addEventListener("submit", (event) => {
     event.preventDefault()
@@ -33,7 +26,6 @@ searchTheme.addEventListener("submit", (event) => {
     weatherApp(locations)
 });
 
-
 async function weatherApp(locations) {
     const data = await fetchAPI(locations);
     const currentData = await currentFetchAPI(locations)
@@ -47,7 +39,6 @@ async function currentFetchAPI(locations) {
     console.log(currentData);
     return currentData;
 }
-
 
 async function fetchAPI(locations) {
     try {
@@ -66,10 +57,6 @@ async function fetchAPI(locations) {
         }
     }
 }
-
-
-
-
 
 function generateHTML(data, currentData) {
     if (counter === 0) {
@@ -341,8 +328,6 @@ function generateHTML(data, currentData) {
 function cutDate(data) {
     return data.split('-').splice(1, 2).reverse().join('.')
 }
-
-
 
 const goBackMenu = document.querySelector('.back-menu')
 

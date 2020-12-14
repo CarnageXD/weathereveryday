@@ -22,7 +22,7 @@ body {
 
 main {
     width: 100%;
-    max-width: 1366px;
+    max-width: 1280px;
     margin: 0 auto;
     position: relative;
 }
@@ -46,7 +46,7 @@ a {
     align-items: center;
     flex-direction: column;
     font-size: 6rem;  
-    visibility: visible;  
+    visibility: hidden;  
     opacity: 1;
     transition: 1s;
 }
@@ -83,7 +83,7 @@ a {
    height: 85px;
    text-align: center;
    transition: 1s;
-   visibility: visible;
+   visibility: hidden;
    cursor: pointer;
 }
 
@@ -129,12 +129,17 @@ a {
 
 
 header {
+    white-space: nowrap;
     text-shadow: 1px 1px black;
-    font-weight: 750;
+    font-weight: 750;    
     padding: .3rem 12rem;
     background-color: #2d1288;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+}
+
+.header-burger {
+    visibility: hidden;
 }
 
 header>.logo {
@@ -144,11 +149,13 @@ header>.logo {
 }
 
 .logo>.logo-text {
+    max-width: 100%;
     margin-right: 0.5rem;
     font-size: 1.7rem;
 }
 
 .search-menu {
+    min-width: 300px;
     width: 50%;
     position: relative;
     margin-top: 1.1rem;
@@ -173,7 +180,7 @@ form button {
     cursor: pointer;
     position: absolute;
     top: 1rem;
-    right: 4rem;
+    right: 8%;
     border: 0;
     background: 0;
     outline: 0;
@@ -186,7 +193,11 @@ form button {
 }
 
 .about-us {
-    margin-right: 4rem;
+    margin-right: 3rem;
+}
+
+.about-api {
+    margin-right: 2rem;
 }
 
 .about-us, .about-api {
@@ -405,6 +416,7 @@ span {
     text-align: left;
     display: flex;    
     justify-content: space-between;
+    margin-right: 2rem;
 }
 
 .additional-details:hover {
@@ -458,4 +470,85 @@ span {
 
 .back-menu:hover {
     opacity: 100%;    
+}
+
+@media only screen and (max-width: 1492px){     
+    main {
+        max-width: 1080px;
+    }  
+    .details {
+        padding: 1rem 3rem;
+    }
+}
+
+@media only screen and (max-width: 1366px){  
+     main {
+         max-width: 1010px;
+     }
+    .additional-details, .details {
+        white-space: nowrap;
+        word-wrap: none;
+    }    
+}
+
+
+@media only screen and (max-width: 1013px){
+    .header-burger {
+        display: block;
+        position: relative;
+        font-size: 36px;
+        visibility: visible;
+        left: 57rem;        
+        top: 1rem
+    }    
+    main {
+        margin-top: 2rem;
+    }
+    .container {
+        height: 75%;
+        width: 75%;
+        margin: 0 auto;
+    }
+    .first-sight-info {
+        display: flex;
+        flex-direction: column;
+    }
+    .degree-description {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 5rem;
+    }
+    .additional-degree {
+        display: flex;        
+    }
+    .about, .search-menu {
+        visibility: hidden;
+    }
+
+    .geolocation {
+        order: -1;
+        margin-bottom: 3rem;
+    }
+}
+
+
+/*Medium devices, Desktops*/
+@media only screen and (max-width: 992px){
+	
+}
+
+/*Small devices, Tablets*/
+@media only screen and (max-width: 768px){
+	
+}
+
+/*Extra small devices, Phones*/
+@media only screen and (max-width: 480px){
+	
+}
+
+/*Custom, iPhone Retina*/
+@media only screen and (max-width: 320px){
+	
 }
