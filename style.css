@@ -8,6 +8,7 @@
 
 html {
     font-family: 'Montserrat', sans-serif;
+    
 }
 
 body {    
@@ -492,7 +493,11 @@ span {
 }
 
 
-@media only screen and (max-width: 1013px){
+@media only screen and (max-width: 1013px){   
+    body {
+        background: linear-gradient(#e2aabb,#5a5ff5) no-repeat;
+        background-attachment: fixed;
+    }
     .header-burger {
         display: block;
         position: relative;
@@ -505,7 +510,7 @@ span {
         margin-top: 2rem;
     }
     .container {
-        height: 75%;
+        height: 70%;
         width: 75%;
         margin: 0 auto;
     }
@@ -517,7 +522,7 @@ span {
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-bottom: 5rem;
+        margin-bottom: 3rem;
     }
     .additional-degree {
         display: flex;        
@@ -530,6 +535,37 @@ span {
         order: -1;
         margin-bottom: 3rem;
     }
+    .additional-container {
+        height: 45%;
+        width: 75%;
+        margin: 0 auto;        
+    }
+    .weather {
+        width: 75%;
+        margin: 0 auto; 
+        flex-wrap: wrap;              
+    }  
+    .daycontainer {
+
+    } 
+    /* .additional-container {
+        height: 75%;
+        width: 75%;
+        margin: 0 auto;        
+    }
+    .weather {
+        width: 75%;
+        margin: 0 auto;  
+        display: flex;
+        flex-direction: column;      
+    }  
+    .daycontainer {
+        display: flex;
+        flex-direction: row;
+        height: 100px;
+        align-items: center;
+        justify-content: space-between;
+    }    */
 }
 
 
