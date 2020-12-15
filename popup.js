@@ -1,10 +1,16 @@
 "use strict"
 
-let popupOpen = document.getElementById('open-pop')
-let popupClose = document.getElementById('popup-close')
-let popupBody = document.getElementById('popup')
+let popupOpen = document.querySelector('.about-us')
+let popupOpenBurger = document.querySelector('.about-us-burger')
+let popupClose = document.querySelector('.popup-close')
+let popupBody = document.querySelector('.popup')
 
 
+
+popupOpenBurger.addEventListener('click', (e) => {
+    e.preventDefault()
+    popupBody.classList.add('show')
+})
 
 popupOpen.addEventListener('click', (e) => {
     e.preventDefault()

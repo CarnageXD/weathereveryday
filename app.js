@@ -2,8 +2,12 @@
 const key = "74d929a73e3642fda3a2696e947bfd22";
 const search = document.querySelector(".form-menu");
 const searchTheme = document.querySelector(".form-theme")
+const searchBurger = document.querySelector(".form-burger")
 const mainLoad = document.querySelector("main");
 const mainTheme = document.querySelector('.main-theme')
+const openBurger = document.querySelector('.header-burger')
+const menuBurger = document.querySelector('.burger-menu')
+let burgerBoolean = 0;
 let locations;
 let counter = 0;
 
@@ -11,6 +15,16 @@ search.addEventListener("submit", (event) => {
     event.preventDefault()
     mainTheme.classList.add('hide')
     counter = 0
+    mainLoad.innerHTML = `<div class="refresh" style = "display: flex; justify-content:center; opacity:0.5;"><img src="weather_icons/refresh.gif"></div>`
+    locations = event.target.location.value
+    weatherApp(locations)
+});
+
+search.addEventListener("submit", (event) => {
+    event.preventDefault()
+    menuBurger.classList.remove('show')
+    openBurger.classList.remove('open')
+    burgerBoolean = 0;
     mainLoad.innerHTML = `<div class="refresh" style = "display: flex; justify-content:center; opacity:0.5;"><img src="weather_icons/refresh.gif"></div>`
     locations = event.target.location.value
     weatherApp(locations)
@@ -329,6 +343,9 @@ function cutDate(data) {
     return data.split('-').splice(1, 2).reverse().join('.')
 }
 
+
+////////////back-menu///////////////////////////
+
 const goBackMenu = document.querySelector('.back-menu')
 
 goBackMenu.addEventListener("click", (e) => {
@@ -337,3 +354,22 @@ goBackMenu.addEventListener("click", (e) => {
     btnTheme.classList.remove('hide')
     geoButton.classList.remove('hide')
 })
+
+
+////////////////////BURGER////////////////////
+
+openBurger.addEventListener('click', (e) => {
+    e.preventDefault()
+    if (burgerBoolean === 0) {
+        menuBurger.classList.add('show')
+        openBurger.classList.add('open')
+        burgerBoolean = 1;
+    }
+    else {
+        menuBurger.classList.remove('show')
+        openBurger.classList.remove('open')
+        burgerBoolean = 0;
+    }
+
+})
+
