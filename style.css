@@ -620,15 +620,7 @@ span {
 
 /*Medium devices, Desktops*/
 @media only screen and (max-width: 992px){
-	.header-container {
-        /* z-index: 1000;
-        position: fixed;
-        top: 0;
-        left: 0; */
-        max-width: 750px;
-        min-width: 350px;
-    }
-    header {
+	header {
         position: fixed;     
         width: 100%;
         top: 0;
@@ -734,6 +726,25 @@ span {
     .your-geolocation {
         margin: 0;
         margin-bottom: 2rem;
+    }
+    .search-menu-theme {   
+        max-width: 100%;
+        position: fixed;
+        margin-top: 1.1rem;
+        visibility: hidden;
+        opacity: 0;    
+        transition: 1s;    
+    }   
+    
+    .input-menu.menu-theme {
+        max-width: 340px;
+    }   
+    
+    .search-menu-theme.show {     
+        max-width: 340px;  
+        visibility: visible;
+        opacity: 1;
+        transition: 1s;    
     }
 }
 
