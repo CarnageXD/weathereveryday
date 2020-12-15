@@ -2,12 +2,11 @@
 <html lang="ua">
 
 <head>
-    <title>WeatherEveryday!</title>
-    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <meta name="viewport" content="width=device-width">
-
+    <link rel="stylesheet" href="style.css">
+    <title>WeatherEveryday!</title>
 </head>
 
 <body>
@@ -33,41 +32,35 @@
         </div>
     </div>
     <header>
-        <div class="main-container">
-            <div class="header-body">
-                <div class="logo">
-                    <div class="logo-text"><a href="">WeatherEveryday!</a></div>
-                    <div class="logo-img">
-                        <a href=""><img height="76" width="76" src="weather_icons/giphy.gif"></a>
-                    </div>
-                </div>
-                <div class="header-burger"><i class="fas fa-bars"></i></div>
-                <div class="about">
-                    <div class="about-us" id="open-pop"><a class="a-about" href="">Про автора</a></div>
-                    <div class="about-api"><a class="a-about" target="_blank" href="https://www.weatherbit.io/api">Про
-                            API</a>
-                    </div>
-                </div>
-                <div class="search-menu">
-                    <form class="form-menu">
-                        <input required type="text" placeholder="Введіть локацію..." name="location">
-                        <button type="submit">
-                            <i class="fas fa-arrow-right"></i>
-                        </button>
-                    </form>
-                </div>
+        <div class="logo">
+            <div class="logo-text"><a href="">WeatherEveryday!</a></div>
+            <div class="logo-img">
+                <a href=""><img height="76" width="76" src="weather_icons/giphy.gif"></a>
             </div>
         </div>
+        <div class="about">
+            <div class="about-us" id="open-pop"><a href="">Про автора</a></div>
+            <div class="about-api"><a target="_blank" href="https://www.weatherbit.io/api">Про API</a></div>
+        </div>
+        <div class="search-menu">
+            <form class="form-menu">
+                <input required type="text" placeholder="Введіть локацію..." name="location">
+                <button type="submit">
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </form>
+        </div>
     </header>
+
     <div class="back-menu"><i class="far fa-arrow-alt-circle-left"></i></div>
 
     <main>
-        <!--Put code from JS handling-->
-        <div class="container">
+        <!-- <div class="container">
             <div class="details">
                 <div class="first-sight-info">
                     <div class="degree-description">
                         <div class="degree">
+                            <div class="last-updated">Останнє оновлення: 8:52</div>
                             <div class="temperature">0<span>°с</span></div>
                             <div class="description">хмарно</div>
                         </div>
@@ -87,15 +80,15 @@
                         <div class="first-additional">
                             <div class="additional-descriptions">
                                 <div class="additional-name">Почувається як</div>
-                                <div class="additional-index">-5<span>°с</span></div>
+                                <div class="additional-index">-8.3<span>°с</span></div>
                             </div>
                             <div class="additional-descriptions">
                                 <div class="additional-name">Тиск</div>
-                                <div class="additional-index">1111</div>
+                                <div class="additional-index">1018</div>
                             </div>
                             <div class="additional-descriptions">
                                 <div class="additional-name">Хмарність</div>
-                                <div class="additional-index">78%</div>
+                                <div class="additional-index">97%</div>
                             </div>
                         </div>
                         <div class="second-additional">
@@ -105,20 +98,23 @@
                             </div>
                             <div class="additional-descriptions">
                                 <div class="additional-name">Направлення вітру</div>
-                                <div class="additional-index">ЮВ</div>
+                                <div class="additional-index">SE</div>
                             </div>
                             <div class="additional-descriptions">
-                                <div class="additional-name">Вірогідність опадів</div>
-                                <div class="additional-index">15%</div>
+                                <div class="additional-name">Якість повітря</div>
+                                <div class="additional-index">24</div>
                             </div>
                         </div>
                     </div>
                     <div class="geolocation">
                         <div class="location-data">ГЛУХІВ</div>
                         <div class="date-data">29/11/2020</div>
+                        <div class="img-description"></div>
                     </div>
                 </div>
+
             </div>
+        </div>
         </div>
         <div class="additional-container">
             <section class="weather">
@@ -179,7 +175,7 @@
                     <div class="week-day-description">SUNNY</div>
                 </div>
             </section>
-        </div>
+        </div> -->
     </main>
 
     <div id="popup" class="popup">
@@ -198,13 +194,15 @@
         </div>
     </div>
 
-    <footer></footer> 
-         
+
+    <footer></footer>       
     <script src="https://kit.fontawesome.com/ec4fabdb94.js" crossorigin="anonymous"></script>
     <script src='theme.js'></script> 
     <script src="app.js"></script>
     <script src='geoApp.js'></script>    
-    <script src="popup.js"></script>               
+    <script src="popup.js"></script> 
+              
        
 </body>
+
 </html>
