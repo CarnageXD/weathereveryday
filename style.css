@@ -595,17 +595,17 @@ span {
 }
 /*Large devices, Wide screens*/
 @media only screen and (max-width: 1200px){    
-    .header-container {
+    .header-body {
+        max-width: 970px;
+    }    
+    .main-container {
         max-width: 970px;
     }
     main {
         margin-top: 2rem;
         max-width: 970px;
     } 
-    /* .additional-details, .details {
-        white-space: nowrap;
-        word-wrap: none;
-    } */
+    
     .details {
         padding: 1rem 3rem;
     }          
@@ -627,11 +627,17 @@ span {
         left: 0;
         z-index: 1500;
     }
+
+    .header-body {
+        max-width: 750px;
+    }
+    .main-container {
+        max-width: 750px
+    }
     html {
-        min-width: 768px;
+        /* min-width: 768px; */
     }
     main {
-        min-width: 350px;
         padding-top: 5rem;
         max-width: 750px;
     }
@@ -639,8 +645,13 @@ span {
         background: linear-gradient(#e2aabb,#5a5ff5) no-repeat;
         background-attachment: fixed;
     }
+
+    .details {
+        margin-left: 2.3rem;
+    }
+
     .additional-details {
-        margin-left: 2rem;
+        margin-left: 2.3rem;
     }
     .logo {
         left: 17rem;
@@ -660,8 +671,8 @@ span {
         margin-top: 2rem;
     }
     .container {
-        height: 50%;
-        max-width: 75%;
+        height: 65%;
+        max-width: 100%;
         margin: 0 auto;
     }
     .first-sight-info {
@@ -687,28 +698,29 @@ span {
     }
     .additional-container {
         height: 55%;
-        max-width: 75%;
+        max-width: 100%;
         margin: 0 auto;        
     }
     .weather {
-        max-width: 75%;
+        max-width: 100%;
         margin: 0 auto; 
         flex-wrap: wrap;              
     } 
     .back-menu {
-        left: 1rem;
+        left: 3rem;
         top: 9rem;
     }
     .input-menu {
         max-width: 150px;
     }
-    /* input[type=text] {
-        max-width: 150px;
-    } */
+    
     .search-menu {
         max-width: 150px;
     }
 
+    .degree-description {
+        margin-top: -10%;
+    }
     .additional-container {        
         border-bottom: 1rem solid #5b60f5;
         border-bottom-left-radius: 40px;
@@ -746,43 +758,46 @@ span {
         opacity: 1;
         transition: 1s;    
     }
+    .details, .additional-details {
+        padding-left: 2.3rem;
+    }
 }
 
 /*Small devices, Tablets*/
 @media only screen and (max-width: 767px){
-    .header-container {
-        max-width: none;
-    }   
-    .container {
-        height: 50%;
-        max-width: 74%;
-        margin: 0 auto;       
+    .header-burger {        
+        left: 28.5rem;        
+        top: 1rem
+    }    
+
+    
+
+    .main-theme {
+        min-width: 350px;
+        font-size: 2.3em;
     }
-	main {
+    header {
         max-width: none;
+    }
+    .header-body {
+        max-width: 350px;
+    }
+    .main-container {
+        max-width: 350px;
+    }
+    main {
+        max-width: 350;
+    }
+    
+}
+
+
+@media only screen and (max-width: 636px){
+    .details, .additional-details {
+        margin: 0;   
+    }
+    .header-burger {        
+        left: 25rem;        
+        top: 1rem
     } 
-    .additional-container {
-        height: 55%;
-        max-width: 74%;
-        margin: 0 auto; 
-        border-bottom: 1rem solid #5b60f5;
-        border-bottom-left-radius: 40px;
-        border-bottom-right-radius: 40px;
-    }
-    .weather {
-        max-width: 74%;
-        margin: 0 auto; 
-        margin-left: 5rem;
-        flex-wrap: wrap;              
-    }     
-}
-
-/*Extra small devices, Phones*/
-@media only screen and (max-width: 480px){
-	
-}
-
-/*Custom, iPhone Retina*/
-@media only screen and (max-width: 320px){
-	
 }
