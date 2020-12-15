@@ -314,13 +314,6 @@ form button {
     font-family: Helvetica;
 }
 
-/*****************************************************
-***************************M**************************
-***************************A**************************
-***************************I**************************
-***************************N**************************
-*****************************************************/
-
 .container {
     height: 340px;
     background: linear-gradient(#311288,#2e2e8d);    
@@ -527,7 +520,8 @@ span {
     opacity: 100%;    
 }
 
-.burger-menu {    
+.burger-menu {   
+    z-index: -1; 
     position: fixed;
     background:#2e2e8d;
     top: 0;
@@ -536,8 +530,7 @@ span {
     height: 100%;
     display: flex;
     flex-direction: column;
-    padding-top: 100px;
-    z-index: 1001;  
+    padding-top: 100px;     
     align-items: center;  
     text-align: center;
     visibility: hidden;
@@ -547,6 +540,7 @@ span {
 
 .burger-menu.show{
     visibility: visible;
+    z-index: 1001; 
     transition: 0.5s;
     transform: translate(0, 0);
 }
@@ -601,7 +595,7 @@ span {
         top: 9rem;
     }
 }
-/*Large devices, Wide screens*/
+
 @media only screen and (max-width: 1200px){    
     .header-body {
         max-width: 970px;
@@ -635,7 +629,6 @@ span {
     }
 }
 
-/*Medium devices, Desktops*/
 @media only screen and (max-width: 992px){
     .geolocation {
         visibility: visible;
@@ -653,10 +646,7 @@ span {
     }
     .main-container {
         max-width: 750px
-    }
-    html {
-        /* min-width: 768px; */
-    }
+    }    
     main {
         overflow: initial;
         padding-top: 5rem;
@@ -788,7 +778,6 @@ span {
     }    
 }
 
-/*Small devices, Tablets*/
 @media only screen and (max-width: 767px){
     .header-burger {        
         left: 28.5rem;        
@@ -814,7 +803,6 @@ span {
     }
     
 }
-
 
 @media only screen and (max-width: 636px){
     .details, .additional-details {
